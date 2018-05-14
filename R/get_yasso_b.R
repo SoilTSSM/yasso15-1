@@ -1,19 +1,18 @@
+# small wrapper for biomassTree
+biomass.tree = function(trees){
+  return (biomassTree(trees$d,trees$h,trees$sp))
+}
+
 #' @title Yasso yearly litter input
 #'
 #' @description
 #' Calculate the 'b' Yasso parameter (yearly litter input by chemical pool), given a set of trees with dbh, heigh and species
 #'
 #' @param trees a data.frame with three columns: d,h, and sp
-#' @return a vector with 5 elements: a,w,e,n,h corresponding to the amount of carbon in each chemical pool generated from litter each year
+#' @return a matrix with 3 rows (non, fine, and coarse woody litter) and 5 columns: a,w,e,n,h corresponding to the amount of carbon in each chemical pool generated from litter each year
 #' @rdname get_yasso_b
 #' @author Victor Felix Strîmbu \email{victor.strimbu@@nmbu.no}
 #' @export
-
-# small wrapper for biomassTree
-biomass.tree = function(trees){
-  return (biomassTree(trees$d,trees$h,trees$sp))
-}
-
 get.Yasso.b = function(trees){
   require(data.table)
   # biomass components
