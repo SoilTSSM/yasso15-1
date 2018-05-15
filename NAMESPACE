@@ -1,1 +1,2 @@
 exportPattern("^[[:alpha:]]+")
+useDynLib("libgcc_s_seh-1.dll")
