@@ -6,10 +6,6 @@
 
 
   # yasso theta parameters
-  thetas = data.table(read.fwf(file="data\\Yasso15.dat", widths=rep(16,35)))
-  turnover = as.matrix(read.csv("data\\turnover.csv"))
-  AWEN.fractions = fread("data\\AWEN.csv")
-  AWEN.array = array(as.matrix(AWEN.fractions[,c("A","W","E","N")]),dim=c(3,8,4))
 
   cat("yasso15 v0.1")
 }

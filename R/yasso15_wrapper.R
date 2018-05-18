@@ -52,6 +52,11 @@ loadDLLs = function(){
   dyn.load(paste0(path.package("yasso15"),"\\external\\libquadmath-0.dll"))
   dyn.load(paste0(path.package("yasso15"),"\\external\\libwinpthread-1.dll"))
   dyn.load(paste0(path.package("yasso15"),"\\external\\libgfortran-4.dll"))
-  # load the yasso fortran rutine
   dyn.load(paste0(path.package("yasso15"),"\\external\\yasso15.dll"))
+
+  thetas = data.table(read.fwf(file=paste0(path.package("yasso15"),"\\external\\Yasso15.dat"), widths=rep(16,35)))
+  turnover = as.matrix(read.csv(paste0(path.package("yasso15"),"\\external\\turnover.csv")))
+  AWEN.fractions = fread(paste0(path.package("yasso15"),"\\external\\AWEN.csv"))
+  AWEN.array = array(as.matrix(AWEN.fractions[,c("A","W","E","N")]),dim=c(3,8,4))
+
 }
