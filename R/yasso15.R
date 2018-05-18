@@ -3,18 +3,15 @@
   library(matrixStats)
   library(skogR)
   # load external binaries
-  filepath = paste0(getwd(),"\\external\\libgcc_s_seh-1.dll")
+  filepath = paste0(getwd(),"\\data\\libgcc_s_seh-1.dll")
   cat(filepath,": ",file.exists(filepath))
 
-  filepath = paste0(getwd(),"\\data\\turnover.csv")
-  cat(filepath,": ",file.exists(filepath))
-
-  dyn.load("external\\libgcc_s_seh-1.dll")
-  dyn.load("external\\libquadmath-0.dll")
-  dyn.load("external\\libwinpthread-1.dll")
-  dyn.load("external\\libgfortran-4.dll")
+  dyn.load("data\\libgcc_s_seh-1.dll")
+  dyn.load("data\\libquadmath-0.dll")
+  dyn.load("data\\libwinpthread-1.dll")
+  dyn.load("data\\libgfortran-4.dll")
   # load the yasso fortran rutine
-  dyn.load("external\\yasso15.dll")
+  dyn.load("data\\yasso15.dll")
 
   # yasso theta parameters
   thetas = data.table(read.fwf(file="data\\Yasso15.dat", widths=rep(16,35)))
