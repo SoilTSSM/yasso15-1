@@ -45,3 +45,13 @@ yasso.15.se = function(thetas,time,climate,init,b,d,leac,steady){
   }
   return(colSds(yasso.out.matrix))
 }
+
+# load the dlls
+loadDLLs = function(){
+  dyn.load("external\\libgcc_s_seh-1.dll")
+  dyn.load("external\\libquadmath-0.dll")
+  dyn.load("external\\libwinpthread-1.dll")
+  dyn.load("external\\libgfortran-4.dll")
+  # load the yasso fortran rutine
+  dyn.load("external\\yasso15.dll")
+}

@@ -2,16 +2,8 @@
   library(data.table)
   library(matrixStats)
   library(skogR)
-  # load external binaries
-  filepath = paste0(getwd(),"\\data\\libgcc_s_seh-1.dll")
-  cat(filepath,": ",file.exists(filepath))
+  # load external binaries; temporrary moved this to yasso15_wrapper
 
-  dyn.load("data\\libgcc_s_seh-1.dll")
-  dyn.load("data\\libquadmath-0.dll")
-  dyn.load("data\\libwinpthread-1.dll")
-  dyn.load("data\\libgfortran-4.dll")
-  # load the yasso fortran rutine
-  dyn.load("data\\yasso15.dll")
 
   # yasso theta parameters
   thetas = data.table(read.fwf(file="data\\Yasso15.dat", widths=rep(16,35)))
