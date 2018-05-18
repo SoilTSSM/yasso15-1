@@ -6,6 +6,9 @@
   filepath = paste0(getwd(),"\\external\\libgcc_s_seh-1.dll")
   cat(filepath,": ",file.exists(filepath))
 
+  filepath = paste0(getwd(),"\\data\\turnover.csv")
+  cat(filepath,": ",file.exists(filepath))
+
   dyn.load("external\\libgcc_s_seh-1.dll")
   dyn.load("external\\libquadmath-0.dll")
   dyn.load("external\\libwinpthread-1.dll")
