@@ -14,8 +14,8 @@
   cat("yasso15 v0.1")
 }
 
- .onLoad = function(libname, pkgname){
-   d1.file = system.file("dlls", "libgcc_s_seh-1.dll", package = "yasso15")
-   cat(d1.file)
-   dyn.load(d1.file)
- }
+# .onLoad = function(libname, pkgname){
+#   d1.file = system.file("dlls", "libgcc_s_seh-1.dll", package = "yasso15")
+#   cat(d1.file)
+#   dyn.load(d1.file)
+# }
