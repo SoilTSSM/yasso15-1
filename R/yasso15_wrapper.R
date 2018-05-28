@@ -48,9 +48,9 @@ yasso.15.se = function(thetas,time,climate,init,b,d,leac,steady){
 
 # load the dlls
 loadDLLs = function(){
-  dyn.load(paste0(path.package("yasso15"),"\\external\\libgcc_s_seh-1.dll"))
-  dyn.load(paste0(path.package("yasso15"),"\\external\\libquadmath-0.dll"))
-  dyn.load(paste0(path.package("yasso15"),"\\external\\libwinpthread-1.dll"))
-  dyn.load(paste0(path.package("yasso15"),"\\external\\libgfortran-4.dll"))
-  dyn.load(paste0(path.package("yasso15"),"\\external\\yasso15.dll"))
+  dyn.load(system.file("dlls", "libgcc_s_seh-1.dll", package = "yasso15"))
+  dyn.load(system.file("dlls", "libquadmath-0.dll", package = "yasso15"))
+  dyn.load(system.file("dlls", "libwinpthread-1.dll", package = "yasso15"))
+  dyn.load(system.file("dlls", "libgfortran-4.dll", package = "yasso15"))
+  dyn.load(system.file("dlls", "yasso15.dll", package = "yasso15"))
 }
