@@ -3,7 +3,8 @@
   library(matrixStats)
   library(skogR)
   # load external binaries;
-
+     d1.file = system.file("dlls", "libgcc_s_seh-1.dll", package = "yasso15")
+     cat(d1.file," ",file.exists(d1.file))
   #dyn.load(paste0(path.package("yasso15"),"\\external\\libquadmath-0.dll"))
   #dyn.load(paste0(path.package("yasso15"),"\\external\\libwinpthread-1.dll"))
   #dyn.load(paste0(path.package("yasso15"),"\\external\\libgfortran-4.dll"))
