@@ -14,7 +14,7 @@ yasso.out.se = yasso.15.se(thetas,time,climate,init,b,d,leac,xt,steady)
 
 
 trees = data.table(d=c(10,15,20),h=c(10,15,17),sp=c(1,2,2))
-yasso.15::get.Yasso.b(trees)
+get.Yasso.b(trees)
 
 data.dir = "W:\\Users\\Victor\\R packages\\yasso15\\inst"
 thetas = data.table(read.fwf(file=paste0(data.dir,"\\external\\Yasso15.dat"), widths=rep(16,35)))

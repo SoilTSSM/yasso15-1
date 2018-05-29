@@ -6,15 +6,24 @@ biomass.tree = function(trees){
 #' @title Yasso yearly litter input
 #'
 #' @description
-#' Calculate the 'b' Yasso parameter (yearly litter input by chemical pool), given a set of trees with dbh, heigh and species
+#' Calculate the 'b' Yasso parameter (yearly litter input by chemical pool), given a set of trees with dbh(d), heigh(h) and species(sp)
 #'
 #' @param trees a data.frame with three columns: d,h, and sp
+#' @param turnover the type of turnover to use: turnover=1, natural turnover of living trees; turnover=2, turnover due to mortality; turnover=3, turnover due to harvest
+
 #' @return a matrix with 3 rows (non, fine, and coarse woody litter) and 5 columns: a,w,e,n,h corresponding to the amount of carbon in each chemical pool generated from litter each year
+#' @examples
+#' trees = data.table(d=c(10,15,20),h=c(10,15,17),sp=c(1,2,2))
+#' get.Yasso.b(trees,turnover=1)
+#'
 #' @rdname get_yasso_b
 #' @author Victor Felix Strîmbu \email{victor.strimbu@@nmbu.no}
 #' @export
-get.Yasso.b = function(trees){
+get.Yasso.b = function(trees, turnover){
   require(data.table)
+  # turnover table
+  if (turnover==1) turnover = turnover.1
+
   # biomass components
   cmp = c("sw","rf","fl","br","db","rc","su","sb")
   trees.biomass = data.table(biomass.tree(trees))
