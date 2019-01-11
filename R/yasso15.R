@@ -12,9 +12,11 @@
   #dyn.load(paste0(path.package("yasso15"),"\\external\\libgfortran-4.dll"))
   #dyn.load(paste0(path.package("yasso15"),"\\external\\yasso15.dll"))
 
-  # yasso theta parameters
-
   cat("yasso15 v0.1")
+}
+
+.onLoad = function(lib, pkg){
+  library.dynam("yasso15", pkg, lib)
 }
 
 # .onLoad = function(libname, pkgname){

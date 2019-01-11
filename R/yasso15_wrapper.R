@@ -54,7 +54,7 @@ yasso.15 = function(time,climate,init,b,d,steady){
 #'
 #' yasso.15.se(time,climate,init,b,d,steady)
 #'
-#' @rdname yasso15_wrapper
+#' @rdname yasso15_se
 #' @author Victor Felix Strîmbu \email{victor.strimbu@@nmbu.no}
 #' @export
 
@@ -65,13 +65,4 @@ yasso.15.se = function(time,climate,init,b,d,steady){
     yasso.out.matrix[i,] = yasso.15(as.numeric(thetas[i]),time,climate,init,b,d,leac,steady)
   }
   return(colSds(yasso.out.matrix))
-}
-
-# load the dlls
-loadDLLs = function(){
-  dyn.load(system.file("dlls", "libgcc_s_seh-1.dll", package = "yasso15"))
-  dyn.load(system.file("dlls", "libquadmath-0.dll", package = "yasso15"))
-  dyn.load(system.file("dlls", "libwinpthread-1.dll", package = "yasso15"))
-  dyn.load(system.file("dlls", "libgfortran-4.dll", package = "yasso15"))
-  dyn.load(system.file("dlls", "yasso15.dll", package = "yasso15"))
 }
