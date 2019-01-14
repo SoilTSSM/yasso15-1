@@ -26,7 +26,7 @@
 
 yasso.15 = function(time,climate,init,b,d,steady){
   xt = c(0,0,0,0,0)
-  theta = as.numeric(thetas[1])
+  theta = unlist(thetas[1])
   leac = 0
   mod5c.res = .Fortran("mod5c",as.double(theta),as.double(time),as.double(climate),as.double(init),as.double(b),as.double(d),as.double(leac),as.double(xt),as.logical(steady),PACKAGE="yasso15")
   mod5c.res[[8]]
