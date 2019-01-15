@@ -1,0 +1,1 @@
+PKG_FCFLAGS = -Wconversion -fdefault-real-8

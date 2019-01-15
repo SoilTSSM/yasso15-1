@@ -1,6 +1,12 @@
 .onAttach = function(lib, pkg){
   library(data.table)
-  library(matrixStats)
+  if (!"skogR" %in% installed.packages()[, "Package"]){
+    if (!"devtools" %in% installed.packages()[, "Package"]){
+      install.packages("devtools")
+    }
+    library(devtools)
+    install_github("hansoleorka/skogR")
+  }
   library(skogR)
   cat("yasso15 v0.1")
 }
