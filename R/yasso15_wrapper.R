@@ -10,7 +10,7 @@
 #' @param d litter diameter if needed
 #' @param leac leach parameter, default = 0
 #' @param steady weather to calculate the steady state. If true it ignores "time" parameter and loops until the carbon in chemical pools stabilizes
-#' @return a vector with three elements:
+#' @return a vector with 5 elements representing the carbon quantities in each chemical pool
 #' @examples
 #' time = 5
 #' climate = c(10,700,10)
@@ -19,7 +19,7 @@
 #' d = 0
 #' steady = F
 #'
-#' yasso.15(time,climate,init,b,d,steady)
+#' yasso.15(time=time,climate=climate,init=init,b=b,d=d,steady=steady)
 #'
 #' @rdname yasso15_wrapper
 #' @author Victor Felix Strîmbu \email{victor.strimbu@@nmbu.no}
@@ -43,8 +43,9 @@ yasso.15 = function(theta,time,climate,init,b,d,leac,steady){
 #' @param init 5 element vector with initial carbon quantities in each chemical pool
 #' @param b 5 element vector with yearly litter input to each chemical pool
 #' @param d litter diameter if needed
+#' @param leac leach parameter, default = 0
 #' @param steady weather to calculate the steady state. If true it ignores "time" parameter and loops until the carbon in chemical pools stabilizes
-#' @return a vector with three elements:
+#' @return a vector with 5 elements representing the carbon quantities in each chemical pool
 #' @examples
 #' time = 5
 #' climate = c(10,700,10)
@@ -53,7 +54,7 @@ yasso.15 = function(theta,time,climate,init,b,d,leac,steady){
 #' d = 0
 #' steady = F
 #'
-#' yasso.15.se(time,climate,init,b,d,steady)
+#' yasso.15.se(time=time,climate=climate,init=init,b=b,d=d,steady=steady)
 #'
 #' @rdname yasso15_se
 #' @author Victor Felix Strîmbu \email{victor.strimbu@@nmbu.no}

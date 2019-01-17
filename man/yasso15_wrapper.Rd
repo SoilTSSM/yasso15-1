@@ -4,9 +4,11 @@
 \alias{yasso.15}
 \title{Yasso15 wrapper}
 \usage{
-yasso.15(time, climate, init, b, d, steady)
+yasso.15(theta, time, climate, init, b, d, leac, steady)
 }
 \arguments{
+\item{theta}{the yasso model parameter values. default values if omited}
+
 \item{time}{time interval in years}
 
 \item{climate}{a 3 element vector with climate parameters: mean temperature (°C), accumulated precipitition (mm), and mean difference between min and max monthly temperature(°C)}
@@ -17,10 +19,12 @@ yasso.15(time, climate, init, b, d, steady)
 
 \item{d}{litter diameter if needed}
 
+\item{leac}{leach parameter, default = 0}
+
 \item{steady}{weather to calculate the steady state. If true it ignores "time" parameter and loops until the carbon in chemical pools stabilizes}
 }
 \value{
-a vector with three elements:
+a vector with 5 elements representing the carbon quantities in each chemical pool
 }
 \description{
 Yasso15 wrapper around the FORTRAN rutine
@@ -33,7 +37,7 @@ b = c(2,2,2,2,2)
 d = 0
 steady = F
 
-yasso.15(time,climate,init,b,d,steady)
+yasso.15(time=time,climate=climate,init=init,b=b,d=d,steady=steady)
 
 }
 \author{

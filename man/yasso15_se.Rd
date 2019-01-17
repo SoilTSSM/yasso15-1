@@ -18,9 +18,11 @@ yasso.15.se(time, climate, init, b, d, steady)
 \item{d}{litter diameter if needed}
 
 \item{steady}{weather to calculate the steady state. If true it ignores "time" parameter and loops until the carbon in chemical pools stabilizes}
+
+\item{leac}{leach parameter, default = 0}
 }
 \value{
-a vector with three elements:
+a vector with 5 elements representing the carbon quantities in each chemical pool
 }
 \description{
 Calculates the error of soil carbon prediction due to errors in the model parameters
@@ -33,7 +35,7 @@ b = c(2,2,2,2,2)
 d = 0
 steady = F
 
-yasso.15.se(time,climate,init,b,d,steady)
+yasso.15.se(time=time,climate=climate,init=init,b=b,d=d,steady=steady)
 
 }
 \author{
